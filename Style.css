@@ -1,0 +1,26 @@
+button{
+    color:rgb(255, 68, 0);
+    background-color: greenyellow;
+}
+
+body{
+    background-color: gray;
+}
+
+* {
+    color: brown;
+}
+
+#headingOne{ /*This is a id selector*/
+    color: yellowgreen;
+}
+#headingTwo{
+    color: black;
+}
+#headingThree{
+    color: blueviolet;
+}
+
+.ParaColor{       /*This is a CALSS selector*/
+    color: cyan;
+}
