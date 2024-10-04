@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Registration Page</title>
+    </head>
+    <style>
+        .parent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .Registration{
+            margin: auto;
+            max-width: 350px;
+        }
+    </style>
+    <body style="background-color: antiquewhite;">
+        <div class="Registration">
+        <h2><u>Registration Page</u></h2>
+        <form>
+            <table>
+                <tr>
+                    <td>First Name :</td>
+                    <td> <input type="text" name="fname"></td>
+                </tr>
+
+                <tr>
+                    <td>Middle Name :</td>
+                    <td><input type="text" name="mname"></td>
+                </tr>
+
+                <tr>
+                    <td>Last Name :</td>
+                    <td><input type="text" name="lname"></td>
+                </tr>
+            </table>
+            <div>
+            <label for="Course">Course : </label>
+            <select id="Course" name="Course">
+                <option value="Developer">Developer</option>
+                <option value="Tester">Tester</option>
+                <option value="Manager">Manager</option>
+                <option value="Designer">Designer</option>
+                <option value="Consultant">Consultant</option>
+                <option value="Engineer">Engineer</option>
+            </select>
+            </div>
+            <br>
+            <label for="title">Gender :</label>
+        
+            <label for="Male">Male </label>
+            <input type="radio" id="Male" name="title">
+        
+            <label for="Female">Female </label>
+            <input type="radio" id="Female" name="title">
+
+            <label for="Homosexual">Homosexual </label>
+            <input type="radio" id="Homosexual" name="title">
+            <br>
+
+            <label for="phno">Phone No:</label>
+            <select id="phno" name="phno">
+                <option value="india">+91</option>
+                <option value="dubai">+971</option>
+            </select>
+            <input type="text">
+            <br>
+            <div>
+                Address : <br><textarea name="myText" cols="40" rows="5"></textarea>
+            </div>
+            <br>
+            <label for="mail">E-mail :</label>
+            <input type="mail" placeholder="Enter your E-mail ID" name="mail">
+            <br>
+            <br>
+            <div>
+                <label>Password :</label>
+                <input type="password" placeholder="Enter Strong Password">
+                <br>
+                <br>
+                <label>Re-Type Password :</label>
+                <input type="password" placeholder="Re-Type Password">
+            </div>
+            <br>
+            <input type="submit">
+        </form>
+        </div>
+    </body>
