@@ -1,11 +1,11 @@
 <!-- My API key - 8333dddbd54a4747a99cb8c047ee28af -->
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Explorer(API)</title>
+    <title>News Explorer</title>
     <style>
         * {
             margin: 0;
@@ -43,7 +43,7 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            background: linear-gradient(90deg, #ffffff, #7dfff4);
+            background: linear-gradient(90deg, #b2c0ff, #ffffff);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -388,11 +388,7 @@
                     <input type="date" id="date">
                 </div>
                 
-                <div class="form-group">
-                    <label for="source">Source Domain</label>
-                    <input type="text" id="source" placeholder="e.g. bbc.com, cnn.com">
-                </div>
-                
+
                 <div class="form-group">
                     <label for="language">Language</label>
                     <select id="language">
@@ -461,7 +457,7 @@
             const searchForm = document.getElementById('search-form');
             const keywordInput = document.getElementById('keyword');
             const dateInput = document.getElementById('date');
-            const sourceInput = document.getElementById('source');
+            // Source domain input removed as requested
             const languageSelect = document.getElementById('language');
             const resetBtn = document.getElementById('reset-btn');
             const searchBtn = document.getElementById('search-btn');
@@ -492,7 +488,6 @@
                 // Build query parameters
                 const keyword = keywordInput.value.trim();
                 const date = dateInput.value;
-                const source = sourceInput.value.trim();
                 const language = languageSelect.value;
                 
                 // Create the API URL
@@ -510,10 +505,6 @@
                     // Format date for API (YYYY-MM-DD to YYYY-MM-DDT00:00:00Z)
                     const formattedDate = `${date}T00:00:00Z`;
                     apiUrl += `from=${formattedDate}&to=${formattedDate}&`;
-                }
-                
-                if (source) {
-                    apiUrl += `domains=${encodeURIComponent(source)}&`;
                 }
                 
                 if (language) {
@@ -708,10 +699,6 @@
                 if (dateInput.value) {
                     const date = new Date(dateInput.value);
                     params.push(`Published on ${date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`);
-                }
-                
-                if (sourceInput.value.trim()) {
-                    params.push(`From ${sourceInput.value.trim()}`);
                 }
                 
                 if (languageSelect.value) {
